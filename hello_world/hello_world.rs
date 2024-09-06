@@ -3,7 +3,8 @@
 fn main() {
     println!("hello,world from rust");
     println!("rust need semicolon only for separate");
-    println!("hello,world from rust")
+    println!("println is a macro and ! is to resolve macro");
+    println!("you can compile using rustc hello_world.rs")
 }
 /*
 rustfmt:
