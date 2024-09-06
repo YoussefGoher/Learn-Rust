@@ -1,7 +1,8 @@
 //rustfmt hello_world.rs
 
 fn main() {
-    println!("hello,world from rust");println!("rust need semicolon only for separate");
+    println!("hello,world from rust");
+    println!("rust need semicolon only for separate");
     println!("hello,world from rust")
 }
 /*
