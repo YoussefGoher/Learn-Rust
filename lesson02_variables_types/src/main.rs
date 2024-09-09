@@ -4,11 +4,12 @@
 */
 fn main() {
     println!("\n Hello, Rust variables");
-    demo_integers();
+    //demo_integers();
+    demo_floats()
 }
 
 //create new function to test integer types
-
+/*
 fn demo_integers() {
     //Rust signed integer -> {u8,u16,u32,u64,u128,usize"word size"}
     let a1: i32 = -12345; //decimal
@@ -31,4 +32,22 @@ fn demo_integers() {
         "\n isize is {} bytes on my machine",
         std::mem::size_of::<isize>()
     );
+}
+*/
+fn demo_floats() {
+    //Rust has single-precision and double-precision floats
+    let f1: f32 = 1.23456;
+    let f2: f64 = 9.87654;
+    println!("\n Floats are {} {}", f1, f2);
+    println!("\n Floats to 2dp are {:.2} {:.2}", f1, f2);
+    println!("\n Floats field width 10 L-aligned filled with space are ***{:<10.2}*** and ***{:<10.2}***",f1,f2);
+    println!("\n Floats field width 10 R-aligned filled with space are ***{:>10.2}*** and ***{:>10.2}***",f1,f2);
+    println!("\n Floats field width 10 L-aligned filled with Hashtag are ***{:#<10.2}*** and ***{:#<10.2}***",f1,f2);
+    println!("\n Floats field width 10 R-aligned filled with Hashtag are ***{:#>10.2}*** and ***{:#>10.2}***",f1,f2);
+
+    //you can use sentific notation with floats
+    let f3: f32 = -1.60217663e-16;
+    let f4: f64 = 2.99792458e8;
+    println!("\n Eletron charge {0}, {0:e}, {0:.4e}", f3);
+    println!("\n speed of light {0}, {0:e}, {0:.4e}", f4);
 }
