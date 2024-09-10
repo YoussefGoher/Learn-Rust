@@ -5,7 +5,8 @@
 fn main() {
     println!("\n Hello, Rust variables");
     //demo_integers();
-    demo_floats()
+    //demo_floats();
+    demo_other_simple_types();
 }
 
 //create new function to test integer types
@@ -34,6 +35,7 @@ fn demo_integers() {
     );
 }
 */
+/*
 fn demo_floats() {
     //Rust has single-precision and double-precision floats
     let f1: f32 = 1.23456;
@@ -50,4 +52,26 @@ fn demo_floats() {
     let f4: f64 = 2.99792458e8;
     println!("\n Eletron charge {0}, {0:e}, {0:.4e}", f3);
     println!("\n speed of light {0}, {0:e}, {0:.4e}", f4);
+}
+*/
+
+fn demo_other_simple_types() {
+    let is_youssef: bool = true;
+    let can_sing: bool = false;
+
+    println!("\nIs youssef? {}, can sing? {}", is_youssef, can_sing);
+
+    //char type:
+    let middle_initial = 'C';
+    let favourite_emoji = '😎';
+    println!(
+        "Hey you with the middle initial {}, your fav emoji is {}",
+        middle_initial, favourite_emoji
+    );
+    println!(
+        "Hey you with the middle initial {}, your fav emoji is {}, size of char is {}",
+        middle_initial,
+        favourite_emoji,
+        std::mem::size_of::<char>()
+    );
 }
