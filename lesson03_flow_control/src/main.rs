@@ -1,7 +1,8 @@
 fn main() {
     //demo_if();
     //demo_match();
-    demo_loops();
+    //demo_loops();
+    demo_loops_break_continue();
 }
 /*
 fn demo_if() {
@@ -68,6 +69,7 @@ fn demo_match() {
     println!("the reslut is {}", res);
 }
 */
+/*
 fn demo_loops() {
     //println!("\nUsing an infinte loop");
     //loop {
@@ -96,4 +98,34 @@ fn demo_loops() {
     for elem in arr {
         println!("{}", elem);
     }
+}
+*/
+fn demo_loops_break_continue() {
+
+    println!("\nDemo using break and continue");
+    
+    let arr = [99, 45, 85, 100, 82];
+    for elem in arr {
+        if elem == 100 {
+            println!("Found 100, so break out of loop completely");
+            break;
+        } 
+        if elem < 50 {
+            println!("Found value less than 50, continue to next iteration");
+            continue;
+        }
+        println!("{}", elem);
+    }
+
+    'outer: loop {
+        println!("Entered the outer loop");
+        loop {
+            println!("Entered the inner loop");
+            break 'outer;  // Break the outer loop.
+        }
+        // println!("This point will never be reached in this example");
+    }
+    println!("Exited the outer loop");
+
+    println!("The End!");
 }
