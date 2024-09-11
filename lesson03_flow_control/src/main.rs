@@ -1,6 +1,7 @@
 fn main() {
     //demo_if();
-    demo_match();
+    //demo_match();
+    demo_loops();
 }
 /*
 fn demo_if() {
@@ -29,6 +30,7 @@ fn demo_if() {
     println!("{}", message);
 }
 */
+/*
 fn demo_match() {
     let num = 100;
     println!("\nUsing a match to match to test an expreession against patterns");
@@ -40,8 +42,8 @@ fn demo_match() {
     }
 
     match num {
-        25..=50 => println!("25 to 50"),
-        51..=100 => println!("51 to 100"),
+        25..50 => println!("25 to 50"),
+        50..=100 => println!("51 to 100"),
         _ => println!("something else"),
     }
 
@@ -64,4 +66,34 @@ fn demo_match() {
     };
 
     println!("the reslut is {}", res);
+}
+*/
+fn demo_loops() {
+    //println!("\nUsing an infinte loop");
+    //loop {
+    //    println!("this loop will go on forever. Hit ctrl-c to stop me ");
+    //    std::thread::sleep(std::time::Duration::from_secs(1));
+    //}
+    println!("\nUsing a while loop");
+    let mut i = 0;
+    while i < 10 {
+        println!("{}", i);
+        i += 1;
+    }
+
+    println!("\nUsing a for loop over a range (inclusive lower bound, exclusive upper bound)");
+    for i in 0..10 {
+        println!("{}", i);
+    }
+
+    println!("\nUsing a for loop over a range (inclusive lower bound, inclusive upper bound)");
+    for i in 0..=10 {
+        println!("{}", i);
+    }
+
+    println!("\nUsing a for loop over an array");
+    let arr = [99, 55, 95, 100, 82];
+    for elem in arr {
+        println!("{}", elem);
+    }
 }
