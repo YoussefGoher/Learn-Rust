@@ -1,5 +1,7 @@
-mod mytypes;
+//mod mytypes;
+mod mytypes_with_complier_flag;
 //use mytypes::Colour;
+use mytypes_with_complier_flag::Colour;
 //like namespace 
 
 fn main() {
@@ -9,10 +11,10 @@ fn main() {
 fn demo_simple_enums() {
     println!("Demo simple enums");
 
-    let c: mytypes::Colour = mytypes::Colour::_Red;
+    let c: Colour = Colour::Red;
     match c {
-        mytypes::Colour::_Red => println!("coch"),
-        mytypes::Colour::_Green => println!("gwyrdd"),
-        mytypes::Colour::_Blue => println!("glas"),
+        Colour::Red => println!("coch"),
+        Colour::Green => println!("gwyrdd"),
+        Colour::Blue => println!("glas"),
     }
 }
