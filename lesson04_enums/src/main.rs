@@ -9,7 +9,8 @@ use mytypes::{Colour, HouseLocation};
 fn main() {
     //demo_simple_enums();
     //demo_enum_with_data();
-    demo_using_option_enum();
+    //demo_using_option_enum();
+    demo_using_result_enum(String::from("youssef goher"));
 }
 
 fn demo_simple_enums() {
@@ -60,4 +61,24 @@ fn sec_of_day(hours: u32, minutes: u32, seconds: u32) -> Option<u32> {
     } else {
         return Option::None;
     }
+}
+
+fn demo_using_result_enum(s: String) {
+    println!("\nDemo using the Result<T, E> enum");
+
+    let res: Result<i32, std::num::ParseIntError>;
+    res = i32::from_str_radix(&s, 10);
+
+    match res {
+        Ok(n) => println!("parsed str as i32 : {}", n),
+        Err(e) => println!("Error occured : {}", e),
+    }
+    let res = i32::from_str_radix(&s, 10);
+    println!(
+        "parsed str as i32 using unwrap_or method: {}",
+        res.unwrap_or_else(|e| {
+            println!("Error parsing string: {}", e);
+            0
+        })
+    );
 }
