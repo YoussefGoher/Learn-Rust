@@ -1,6 +1,7 @@
 fn main() {
     //demo_arrays();
-    demo_arrays_techniques();
+    //demo_arrays_techniques();
+    demo_tuples();
 }
 /*
 fn demo_arrays() {
@@ -31,6 +32,7 @@ fn demo_arrays() {
     }
 }
 */
+/*
 fn demo_arrays_techniques() {
     // You can specify type info and size.
     let a1: [i64; 5];
@@ -41,4 +43,28 @@ fn demo_arrays_techniques() {
     let mut a2 = [99; 5];
     a2[0] = 24;
     println!("a2 is {:?}", a2);
+}
+*/
+fn demo_tuples() {
+    println!("\ndemo Function to use tuples in Rust");
+    // A tuple is a fixed-size heterogeneous collection.
+    let t1 = (100, String::from("hello"), 3.14);
+    println!(
+        "\nt1 is {:?}, individual elements are {}, {}, {}",
+        t1, t1.0, t1.1, t1.2
+    );
+
+    // You can also create a mutable tuple (but you have to be consistent with element types).
+    let mut t2 = (100, String::from("hello"), 3.14);
+    t2.0 = 199;
+    println!("t2 is {:?}", t2);
+
+    // You can specify type info.
+    let t3: (i32, String, f64);
+    t3 = (200, String::from("world"), 9.99);
+    println!("t3 is {:?}", t3);
+
+    // You can also have an empty tuple (handy for functions that return nothing at all).
+    let t4 = ();
+    println!("t4 is {:?}", t4);
 }
