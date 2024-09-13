@@ -1,8 +1,10 @@
+use std::collections::HashMap;
 fn main() {
     //demo_arrays();
     //demo_arrays_techniques();
     //demo_tuples();
-    demo_vec();
+    //demo_vec();
+    demo_maps();
 }
 
 /*
@@ -72,7 +74,7 @@ fn demo_tuples() {
     println!("t4 is {:?}", t4);
 }
 */
-
+/*
 fn demo_vec() {
     println!("\nDemo Using Vector In Rust");
     let mut vec1: Vec<i32> = Vec::new();
@@ -115,4 +117,48 @@ fn demo_vec() {
 
     // vec1 is no longer available after this point because it was moved
     // println!("Trying to use vec1 after move: {:?}", vec1); // This line would cause an error
+}
+*/
+
+fn demo_maps(){
+    println!("\nUsing HashMap");
+    let mut world_population_2024 : HashMap<String,u64> = HashMap::new();
+    //let mut m = HashMap::<String,i32>::new();
+    //let mut m: HashMap<String, i32> = HashMap::<String,i32>::new();
+    world_population_2024.insert(String::from("Egypt"), 116_908_244);
+    world_population_2024.insert(String::from("India"), 1_453_560_234);
+    world_population_2024.insert(String::from("China"), 1_418_663_722);
+    world_population_2024.insert(String::from("U.S.A"), 345_802_457);
+
+    println!("print of world_population_2024 map using debug: {:?}", world_population_2024);
+
+    //save insert method
+    world_population_2024.entry(String::from("Egypt")).or_insert(116_908_244);
+
+    //this will make Rust  panicks at runtime 
+    //let indonesia_population    =    world_population_2024["Indonesia"];
+
+    //save search method
+    let indonesia_population_option    =    world_population_2024.get("Indonesia");
+
+    match indonesia_population_option{
+        Some(vlue) => println!("Indonesia Population = {}",vlue),
+        None => println!("No Vlue for Indonesia Population")
+    }
+    
+    // Non-destructive iteration (borrowing)
+    for (country, population) in &world_population_2024 {
+        println!("Country: {}, Population: {}", country, population);
+    }
+
+    // You can still use world_population_2024 here
+    println!("HashMap is still usable: {:?}", world_population_2024);
+    
+    // Destructive iteration (moving)
+    for (country, population) in world_population_2024 {
+        println!("Country: {}, Population: {}", country, population);
+    }
+
+    // After this, world_population_2024 cannot be used
+    // println!("{:?}", world_population_2024); // This would cause a compile-time error
 }
