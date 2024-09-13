@@ -1,8 +1,10 @@
 fn main() {
     //demo_arrays();
     //demo_arrays_techniques();
-    demo_tuples();
+    //demo_tuples();
+    demo_vec();
 }
+
 /*
 fn demo_arrays() {
     println!("\ndemo Function to use arrays in Rust");
@@ -45,6 +47,7 @@ fn demo_arrays_techniques() {
     println!("a2 is {:?}", a2);
 }
 */
+/*
 fn demo_tuples() {
     println!("\ndemo Function to use tuples in Rust");
     // A tuple is a fixed-size heterogeneous collection.
@@ -67,4 +70,30 @@ fn demo_tuples() {
     // You can also have an empty tuple (handy for functions that return nothing at all).
     let t4 = ();
     println!("t4 is {:?}", t4);
+}
+*/
+
+fn demo_vec() {
+    println!("\nDemo Using Vector In Rust");
+    let mut vec1: Vec<i32> = Vec::new();
+
+    let item = vec1.get(0);
+
+    match item {
+        Some(vlue) => println!("Vlue= {}", vlue),
+        None => println!("This Index Has No Vlue"),
+    };
+
+    vec1.push(32);
+
+    let item = vec1.pop();
+
+    match item {
+        Some(vlue) => println!("POP Vlue= {}", vlue),
+        None => println!("POP of Vector Has No Vlue"),
+    };
+
+    vec1 = vec![10, 3, 4, 5, 6, 7];
+
+    println!("print vector vec1 using debug: {:?}", vec1);
 }
