@@ -1,7 +1,8 @@
 fn main() {
-    demo_arrays();
+    //demo_arrays();
+    demo_arrays_techniques();
 }
-
+/*
 fn demo_arrays() {
     println!("\ndemo Function to use arrays in Rust");
     let arr1: [i32; 8] = [100, 34, 60, -99, 0, 0, 0, 0];
@@ -28,4 +29,16 @@ fn demo_arrays() {
     for elem in arr3 {
         println!("{:>4}", elem);
     }
+}
+*/
+fn demo_arrays_techniques() {
+    // You can specify type info and size.
+    let a1: [i64; 5];
+    a1 = [100, 101, 102, 103, 104];
+    println!("\na1 is {:?}", a1);
+
+    // You can fill an array with [filler;size] syntax.
+    let mut a2 = [99; 5];
+    a2[0] = 24;
+    println!("a2 is {:?}", a2);
 }
