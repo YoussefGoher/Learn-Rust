@@ -96,4 +96,23 @@ fn demo_vec() {
     vec1 = vec![10, 3, 4, 5, 6, 7];
 
     println!("print vector vec1 using debug: {:?}", vec1);
+
+    // First loop: Borrowing the vector
+    for item in &vec1 {
+        println!("Borrowed: {:>3}", item);
+    }
+
+    // vec1 is still available here
+    println!(
+        "Print vector vec1 using debug after print with borrowing: {:?}",
+        vec1
+    );
+
+    // Second loop: Moving ownership
+    for item in vec1 {
+        println!("Owned: {:>3}", item);
+    }
+
+    // vec1 is no longer available after this point because it was moved
+    // println!("Trying to use vec1 after move: {:?}", vec1); // This line would cause an error
 }
